@@ -1,5 +1,5 @@
 node("docker") {
-    #docker.withRegistry('andreluizkbca/get-start-react', 'docker-hub') {
+//    #docker.withRegistry('andreluizkbca/get-start-react', 'docker-hub') {
     
         git url: "git@github.com:andreluizmachado/get-start-react.git", credentialsId: 'github'
     
@@ -13,5 +13,5 @@ node("docker") {
         stage "publish"
         app.push 'master'
         app.push "${commit_id}"
-    #}
+//    #}
 }
