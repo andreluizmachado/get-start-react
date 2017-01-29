@@ -1,5 +1,5 @@
 node("docker") {
-println 'teste rodando a paradinha com docker agent'
+println 'tttteste rodando a paradinha com docker agent'
 //    #docker.withRegistry('andreluizkbca/get-start-react', 'docker-hub') {
 /*    
         git url: "git@github.com:andreluizmachado/get-start-react.git", credentialsId: 'github'
