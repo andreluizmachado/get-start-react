@@ -1,6 +1,9 @@
 node("docker") {
 docker.withServer('tcp://172.17.0.1:4243') {
-  docker.image('alpine').inside {
+  /*docker.image('alpine').inside {
+    sh 'echo "ESTOU DENTRO DO ALPINE"'
+  }*/
+  docker.image('alpine').withRun {c ->
     sh 'echo "ESTOU DENTRO DO ALPINE"'
   }
 }
