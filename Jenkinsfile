@@ -1,5 +1,8 @@
 node("docker") {
-docker.withServer('tcp://172.17.0.1:4243') {
+
+sh 'docker run -it alpine echo "teste"'
+
+/*docker.withServer('tcp://172.17.0.1:4243') {
   /*docker.image('alpine').inside {
     sh 'echo "ESTOU DENTRO DO ALPINE"'
   }*/
@@ -7,6 +10,7 @@ docker.withServer('tcp://172.17.0.1:4243') {
     sh 'echo "ESTOU DENTRO DO ALPINE"'
   }
 }
+*/
 
 println 'tttteste rodando a paradinha com docker agent'
 //    #docker.withRegistry('andreluizkbca/get-start-react', 'docker-hub') {
