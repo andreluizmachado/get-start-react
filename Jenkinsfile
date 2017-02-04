@@ -1,5 +1,6 @@
 node("docker") {
-
+sh "ip route show"
+env.DOCKER_HOST="172.17.0.1:4243"
 sh "docker images"
 
 /*docker.withServer('tcp://172.17.0.1:4243') {
