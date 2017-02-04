@@ -1,8 +1,6 @@
 node("docker") {
-print "criando um arquivo"
-sh 'touch teste.txt'
-sh 'ls'
-checkout scm 
+stage 'checkout'
+	checkout scm 
 sh "ip route show"
 sh 'echo ${WORKSPACE}'
 sh 'ls ${WORKSPACE}' 
