@@ -1,4 +1,4 @@
-node("docker") {
+node() {
 sh 'touch test.txt'
 stage 'checkout'
 	checkout scm 
