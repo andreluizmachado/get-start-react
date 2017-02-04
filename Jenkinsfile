@@ -1,6 +1,7 @@
 node("docker") {
 sh "ip route show"
-sh 'ls'
+sh 'echo ${WORKSPACE}'
+sh 'ls ${WORKSPACE}' 
 env.DOCKER_HOST="172.17.0.1:4243"
 sh "docker images"
 sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine echo 'alpine' && ls"
