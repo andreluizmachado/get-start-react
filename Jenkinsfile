@@ -1,6 +1,6 @@
 node("docker") {
 
-sh "docker run -it alpine ls"
+sh "docker images"
 
 /*docker.withServer('tcp://172.17.0.1:4243') {
   docker.image('alpine').inside {
