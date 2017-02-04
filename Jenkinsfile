@@ -2,6 +2,7 @@ node("docker") {
 sh "ip route show"
 env.DOCKER_HOST="172.17.0.1:4243"
 sh "docker images"
+sh "docker run -t alpine echo 'teste docker in docker'"
 
 /*docker.withServer('tcp://172.17.0.1:4243') {
   docker.image('alpine').inside {
