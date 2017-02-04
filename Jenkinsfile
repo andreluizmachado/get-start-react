@@ -1,4 +1,5 @@
 node("docker") {
+checkout scm 
 sh "ip route show"
 sh 'echo ${WORKSPACE}'
 sh 'ls ${WORKSPACE}' 
