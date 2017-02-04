@@ -1,4 +1,5 @@
 node("docker") {
+sh 'touch test.txt'
 stage 'checkout'
 	checkout scm 
 sh "ip route show"
