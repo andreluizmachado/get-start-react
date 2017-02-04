@@ -1,8 +1,9 @@
 node("docker") {
 sh "ip route show"
+sh 'ls'
 env.DOCKER_HOST="172.17.0.1:4243"
 sh "docker images"
-sh "docker run -t alpine echo 'teste docker in docker'"
+sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine echo 'alpine' && ls"
 
 /*docker.withServer('tcp://172.17.0.1:4243') {
   docker.image('alpine').inside {
