@@ -9,15 +9,15 @@ env.DOCKER_HOST="172.17.0.1:4243"
 sh "docker images"
 sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine echo 'alpine' && ls"
 
-/*docker.withServer('tcp://172.17.0.1:4243') {
+docker.withServer('tcp://172.17.0.1:4243') {
   docker.image('alpine').inside {
     sh 'echo "ESTOU DENTRO DO ALPINE"'
   }
-  docker.image('alpine').withRun {c ->
-    sh 'echo "ESTOU DENTRO DO ALPINE"'
-  }
+#  docker.image('alpine').withRun {c ->
+#    sh 'echo "ESTOU DENTRO DO ALPINE"'
+#  }
 }
-*/
+
 
 println 'tttteste rodando a paradinha com docker agent'
 //    #docker.withRegistry('andreluizkbca/get-start-react', 'docker-hub') {
