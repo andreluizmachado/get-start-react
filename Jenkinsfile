@@ -2,12 +2,14 @@ node('docker') {
 sh 'touch test.txt'
 stage 'checkout'
 	checkout scm 
-//sh "ip route show"
-//sh 'echo ${WORKSPACE}'
-//sh 'ls ${WORKSPACE}' 
+sh "ip route show"
+sh 'echo ${WORKSPACE}'
+sh 'ls ${WORKSPACE}' 
 env.DOCKER_HOST="172.17.0.1:4243"
-//sh "docker images"
-sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine ls && watch -n 1 ls"
+sh "docker images"
+
+sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine ls"
+sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine watch -n 1 ls"
 
 /*docker.withServer('tcp://172.17.0.1:4243') {
   docker.image('alpine').inside {
