@@ -1,0 +1,231 @@
+[
+    {
+        "Id": "de8ba8ba9173d21d5161d35d93cf137e3afabdca10e5d54b0b23967460b65e15",
+        "Created": "2017-01-30T00:15:14.674188321Z",
+        "Path": "/bin/tini",
+        "Args": [
+            "--",
+            "/usr/local/bin/jenkins.sh"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 3201,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2017-02-06T13:03:47.528044178Z",
+            "FinishedAt": "2017-02-05T20:01:15.860018883Z"
+        },
+        "Image": "sha256:59d580851733ed1c29ef9afc36c0f0207480633b244b5daef32a5a1ea462969d",
+        "ResolvConfPath": "/var/lib/docker/containers/de8ba8ba9173d21d5161d35d93cf137e3afabdca10e5d54b0b23967460b65e15/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/de8ba8ba9173d21d5161d35d93cf137e3afabdca10e5d54b0b23967460b65e15/hostname",
+        "HostsPath": "/var/lib/docker/containers/de8ba8ba9173d21d5161d35d93cf137e3afabdca10e5d54b0b23967460b65e15/hosts",
+        "LogPath": "/var/lib/docker/containers/de8ba8ba9173d21d5161d35d93cf137e3afabdca10e5d54b0b23967460b65e15/de8ba8ba9173d21d5161d35d93cf137e3afabdca10e5d54b0b23967460b65e15-json.log",
+        "Name": "/jenkins-good",
+        "RestartCount": 0,
+        "Driver": "aufs",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/home/andre/jenkins_home:/var/jenkins_home",
+                "/var/run/docker.sock:/var/run/docker.sock"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {
+                "50000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "50000"
+                    }
+                ],
+                "8080/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DiskQuota": 0,
+            "KernelMemory": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": -1,
+            "OomKillDisable": false,
+            "PidsLimit": 0,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0
+        },
+        "GraphDriver": {
+            "Name": "aufs",
+            "Data": null
+        },
+        "Mounts": [
+            {
+                "Source": "/home/andre/jenkins_home",
+                "Destination": "/var/jenkins_home",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Source": "/var/run/docker.sock",
+                "Destination": "/var/run/docker.sock",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "de8ba8ba9173",
+            "Domainname": "",
+            "User": "jenkins",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "50000/tcp": {},
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64",
+                "JAVA_VERSION=8u111",
+                "JAVA_DEBIAN_VERSION=8u111-b14-2~bpo8+1",
+                "CA_CERTIFICATES_JAVA_VERSION=20140324",
+                "JENKINS_HOME=/var/jenkins_home",
+                "JENKINS_SLAVE_AGENT_PORT=50000",
+                "TINI_VERSION=0.13.1",
+                "TINI_SHA=0f78709a0e3c80e7c9119fdc32c2bc0f4cfc4cab",
+                "JENKINS_VERSION=2.32.1",
+                "JENKINS_UC=https://updates.jenkins.io",
+                "COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log"
+            ],
+            "Cmd": null,
+            "Image": "jenkins",
+            "Volumes": {
+                "/var/jenkins_home": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/bin/tini",
+                "--",
+                "/usr/local/bin/jenkins.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "93dd273b0224b94c1be9c2831c9f7e412a1629f6693fa1896c71dde1524c8937",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "50000/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "50000"
+                    }
+                ],
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/93dd273b0224",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "acc1d2a00d99db4422093cea9a7f9964f69dcbecbd8277143fe83bf7b6a973c2",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "bb24a94e43005e8961fed714e6081b4f29ed82023b7ee0f8933836537d92603e",
+                    "EndpointID": "acc1d2a00d99db4422093cea9a7f9964f69dcbecbd8277143fe83bf7b6a973c2",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:02"
+                }
+            }
+        }
+    }
+]
