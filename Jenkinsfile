@@ -1,9 +1,9 @@
 node('docker') {
-sh 'touch test.txt'
-#stage 'checkout'
-#	checkout scm 
-#sh "ip route show"
-#sh 'echo ${WORKSPACE}'
+//sh 'touch test.txt'
+//stage 'checkout'
+//	checkout scm 
+//sh "ip route show"
+//sh 'echo ${WORKSPACE}'
 sh 'ls ${WORKSPACE}' 
 env.DOCKER_HOST="172.17.0.1:4243"
 sh "docker images"
