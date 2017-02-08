@@ -13,6 +13,7 @@ env.DOCKER_HOST="172.17.0.1:4243"
 
 docker.withServer('tcp://172.17.0.1:4243') {
   docker.image('alpine').inside {
+    print "ENTREEEEEEEI"
     sh 'echo "ESTOU DENTRO DO ALPINE"'
   }
 //  docker.image('alpine').withRun {c ->
