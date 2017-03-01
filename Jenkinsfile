@@ -1,43 +1,41 @@
+#!groovy
+import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+def dockerHostTesting = "tcp://10.80.29.81:2375"
+
 node('docker') {
-//sh 'touch test.txt'
-stage 'checkout'
-	checkout scm 
-//sh "ip route show"
-//sh 'echo ${WORKSPACE}'
-//sh 'ls ${WORKSPACE}' 
-env.DOCKER_HOST="172.17.0.1:2375"
-//sh "docker images"
+    wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm', 'defaultFg': 1, 'defaultBg': 2]) {
+        stage ('Checkout') {
+            step([$class: 'WsCleanup'])
+                checkout scm
+        }
 
-//sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine ls"
-//sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine watch -n 1 ls"
-
-docker.withServer('tcp://172.17.0.1:2375') {
-  docker.image('alpine').inside {
-    print "ENTREEEEEEEI"
-    sh 'echo "ESTOU DENTRO DO ALPINE"'
-    sh 'cat /etc/issue'
-  }
-//  docker.image('alpine').withRun {c ->
-//    sh 'echo "ESTOU DENTRO DO ALPINE"'
-//  }
-}
+        docker.withServer(dockerHostTesting) {
+            try {
+                stage ('Installing Dependencies') {
+                    //installDependencies()
+                }
 
 
-println 'tttteste rodando a paradinha com docker agent'
-//    #docker.withRegistry('andreluizkbca/get-start-react', 'docker-hub') {
-/*    
-        git url: "git@github.com:andreluizmachado/get-start-react.git", credentialsId: 'github'
-    
-        sh "git rev-parse HEAD > .git/commit-id"
-        def commit_id = readFile('.git/commit-id').trim()
-        println commit_id
-    
-        stage "build"
-        def app = docker.build "get-start-react"
-    
-        stage "publish"
-        app.push 'master'
-        app.push "${commit_id}"
-*/
-//    #}
+                stage ('Unit Tests') {
+                    //runUnitTests()
+                }
+
+
+                stage ('Build Application for Functional Tests') {
+                    //buildApplicationTest()
+                }
+
+
+                stage ('Functional Tests') {
+                    //runFunctionalTests()
+                }
+
+            }
+            finally {
+                //teardownContainers()
+            }
+        }
+    }
 }
