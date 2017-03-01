@@ -5,13 +5,13 @@ stage 'checkout'
 //sh "ip route show"
 //sh 'echo ${WORKSPACE}'
 //sh 'ls ${WORKSPACE}' 
-env.DOCKER_HOST="172.17.0.1:4243"
+env.DOCKER_HOST="172.17.0.1:2375"
 //sh "docker images"
 
 //sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine ls"
 //sh "docker run -t -v ${PWD}:/var/xuxa -w /var/xuxa alpine watch -n 1 ls"
 
-docker.withServer('tcp://172.17.0.1:4243') {
+docker.withServer('tcp://172.17.0.1:2375') {
   docker.image('alpine').inside {
     print "ENTREEEEEEEI"
     sh 'echo "ESTOU DENTRO DO ALPINE"'
